@@ -27,7 +27,7 @@
 
         if (tile.isActivated){
 
-            
+            // timer started if needed
             if (!timer.isTimerRunning) {
                     timer.startTimer();
                 }
@@ -74,6 +74,12 @@
     function handleRightClick(){
         if (tile.isActivated){
 
+            // timer is started if needed
+            if (!timer.isTimerRunning) {
+                    timer.startTimer();
+                }
+
+            // tile is flagged or unflagged
             if (!tile.isFlagged && !tile.isRevealed){
                 tile.isFlagged = true;
                 $board.remainingMines--;
@@ -95,7 +101,7 @@
 
     {#if tile.isFlagged}
         🚩
-    {:else if tile.isMine && tile.isRevealed}
+    {:else if tile.isMine}
         💣
     {:else if tile.numberOfMines > 0 && tile.isRevealed }
         {tile.numberOfMines}

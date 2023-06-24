@@ -4,11 +4,23 @@ import type { Timer } from "../routes/game/Timer";
 // checks every turn if the board has been completed (all mines flagged)
 export function checkVictory(board: Board){
 
-    if (board.remainingMines != 0) return false; // the remaining mines value is based on how many flags are deployed. if the value isnt exactly 0, there can't be a victory
+    // first check if all mines are flagged
+    if (board.remainingMines == 0){
+
+        for (let y = 0; y < board.rows; y++){
+            for (let x = 0; x < board.columns; x++){
+                const tile = board.board[y][x];
+                if (tile.isMine && !tile.isFlagged) return false; // check if there's any mine that is not flagged
+            }
+        }
+        return true;
+    }
+
+    // if not, check if all tiles with no mines are revealed (flagless win)
     for (let y = 0; y < board.rows; y++){
         for (let x = 0; x < board.columns; x++){
             const tile = board.board[y][x];
-            if (tile.isMine && !tile.isFlagged) return false // check if there's any mine that is not flagged
+            if (!tile.isMine && !tile.isRevealed) return false;
         }
     }
 
