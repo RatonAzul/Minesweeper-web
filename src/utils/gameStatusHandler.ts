@@ -48,6 +48,11 @@ export function handleVictory(board: Board, timer: Timer){
             const tile = board.board[y][x];
 
             tile.isActivated = false;
+
+            if (tile.isMine && !tile.isFlagged){
+                tile.isFlagged = true;
+            }
+
             // check if there's any mine that is not flagged
             if (!tile.isRevealed && !tile.isFlagged) {
                 tile.isRevealed = true;

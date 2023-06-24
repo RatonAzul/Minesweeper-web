@@ -32,19 +32,19 @@
                     timer.startTimer();
                 }
             
-                tile.isRevealed = true;
+                
 
                 // left click wont have any effect if the tile is flagged
                 if (!tile.isFlagged){
 
                     
+                    tile.isRevealed = true;
+
                     // safestart is executed if necessary
                     if ($board.safeStart && tile.isMine) { 
                         safeStart(tile, $board);
                         refreshBoard($board);
                     }
-
-                  
 
                     // safestart turned off after first tile is clicked
                     if ($board.safeStart) $board.safeStart = false; 
