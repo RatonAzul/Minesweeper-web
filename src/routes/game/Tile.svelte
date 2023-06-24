@@ -101,7 +101,7 @@
 
     {#if tile.isFlagged}
         🚩
-    {:else if tile.isMine}
+    {:else if tile.isMine && tile.isRevealed}
         💣
     {:else if tile.numberOfMines > 0 && tile.isRevealed }
         {tile.numberOfMines}
