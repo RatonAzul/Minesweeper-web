@@ -1,6 +1,6 @@
 <script lang="ts">
 	import TileComponent from "./Tile.svelte";
-    import { difficulty } from "./Difficulty";
+    import { difficulty } from "./Stores";
 	import { Board } from "./Board";
 	import { generateBoard } from "../../utils/boardUtils";
 	import { writable, type Writable } from "svelte/store";

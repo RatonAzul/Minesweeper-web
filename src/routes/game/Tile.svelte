@@ -6,7 +6,7 @@
 	import { countMines } from "../../utils/mineCounter";
 	import { chordTile, refreshBoard, revealTilesAround, safeStart, setWrongFlags } from "../../utils/boardUtils";
 	import type { Timer } from "./Timer";
-	import { difficulty } from "./Difficulty";
+	import { difficulty } from "./Stores";
 
 	
     export let board: Writable<Board>;

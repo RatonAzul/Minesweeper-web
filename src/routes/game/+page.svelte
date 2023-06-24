@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { difficulty } from "./Difficulty";
+	import { difficulty } from "./Stores";
 	import Board from "./Board.svelte";
+	import DarkModeButton from "../DarkModeButton.svelte";
 
 
     // responsive game board
@@ -33,7 +34,7 @@
     
     <!-- return to menu button -->
     <section class="w-full flex justify-around">
-        <div class="w-1/4 text-center" style="font-size: {containerWidth/50}px;"><a href=".">RETURN TO MENU</a></div>
+        <div class="w-1/4 text-center xl:text-4xl lg:text-2xl sm:text-xl text-lg hover:scale-125 transition duration-300 ease-out" ><a href=".">RETURN TO MENU</a></div>
     </section>
     
     <!-- board -->
@@ -43,8 +44,13 @@
             <Board></Board>
        </div>
     </main>
+
+    <DarkModeButton></DarkModeButton>
 </body>
 
 <style>
-
+    :global(body.dark-mode){
+        color: rgb(255, 249, 229);
+        background-color: rgb(33, 33, 51); 
+    }
 </style>
