@@ -49,8 +49,5 @@
 </body>
 
 <style>
-    :global(body.dark-mode){
-        color: rgb(255, 249, 229);
-        background-color: rgb(33, 33, 51); 
-    }
+  
 </style>
