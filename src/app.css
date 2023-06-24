@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face
+{
+    font-family: 'Russo One';
+    font-weight: normal;
+    font-style: normal;
+    src: url('assets/RussoOne-Regular.ttf');
+}
